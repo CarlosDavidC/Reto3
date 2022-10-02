@@ -22,7 +22,7 @@ public class Category {
     private String name;
     private String description;
 
-    @OneToMany(mappedBy= "category") //cascade = {CascadeType.PERSIST},
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy= "category") //cascade = {CascadeType.PERSIST},
     @JsonIgnoreProperties("category")
     private List<Partyroom> partyrooms; //cambio nuevo
 

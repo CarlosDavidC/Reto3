@@ -34,12 +34,12 @@ public class Partyroom  {
     private Category category;
 
 
-    @OneToMany(mappedBy = "partyroom") //cascade = {CascadeType.PERSIST},
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "partyroom") //cascade = {CascadeType.PERSIST},
     @JsonIgnoreProperties({"partyroom","client"})
     //@JsonIgnoreProperties({"partyroom"})
     private List<Message> messages;
 
-    @OneToMany( mappedBy = "partyroom") //cascade = {CascadeType.PERSIST},
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "partyroom") //cascade = {CascadeType.PERSIST},
     @JsonIgnoreProperties({"partyroom","messages"})
     //@JsonIgnoreProperties({"partyroom"})
     public List<Reservation> reservations;
