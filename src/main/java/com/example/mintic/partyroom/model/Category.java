@@ -24,7 +24,7 @@ public class Category {
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy= "category") //cascade = {CascadeType.PERSIST},
     @JsonIgnoreProperties("category")
-    private List<Partyroom> partyrooms; //cambio nuevo
+    private List<Partyroom> partyroom; //cambio nuevo
 
 
     public Integer getId() {
@@ -45,11 +45,11 @@ public class Category {
     public void setDescription(String description) {
         this.description = description;
     }
-    public List<Partyroom> getPartyrooms() {
-        return partyrooms;
+    public List<Partyroom> getPartyroom() {
+        return partyroom;
     }
-    public void setPartyroom(List<Partyroom> partyrooms) {
-        this.partyrooms = partyrooms;
+    public void setPartyroom(List<Partyroom> partyroom) {
+        this.partyroom = partyroom;
     }
   
     
