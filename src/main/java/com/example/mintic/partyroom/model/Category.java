@@ -22,35 +22,48 @@ public class Category {
     private String name;
     private String description;
 
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy= "category") //cascade = {CascadeType.PERSIST},
+    @OneToMany( mappedBy= "category") //cascade = {CascadeType.PERSIST},
     @JsonIgnoreProperties("category")
-    private List<Partyroom> partyroom; //cambio nuevo
+    public List<Partyroom> partyrooms; //cambio nuevo
 
 
     public Integer getId() {
         return id;
     }
+
+
     public void setId(Integer id) {
         this.id = id;
     }
+
+
     public String getName() {
         return name;
     }
+
+
     public void setName(String name) {
         this.name = name;
     }
+
+
     public String getDescription() {
         return description;
     }
+
+
     public void setDescription(String description) {
         this.description = description;
     }
-    public List<Partyroom> getPartyroom() {
-        return partyroom;
+
+
+    public List<Partyroom> getPartyrooms() {
+        return partyrooms;
     }
-    public void setPartyroom(List<Partyroom> partyroom) {
-        this.partyroom = partyroom;
+
+
+    public void setPartyrooms(List<Partyroom> partyroom) {
+        this.partyrooms = partyroom;
     }
-  
-    
+
 }

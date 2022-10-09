@@ -1,8 +1,6 @@
 package com.example.mintic.partyroom.model;
-
 import java.io.Serializable;
 import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "partyroom")
-public class Partyroom  {
+public class Partyroom implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,11 +24,11 @@ public class Partyroom  {
     private String owner;
     private Integer capacity;
     private String description;
-    
+
 
     @ManyToOne
     @JoinColumn(name = "categoryId")
-    @JsonIgnoreProperties("partyroom")  //cambio nuevo
+    @JsonIgnoreProperties("partyroom")  //cambio nuevo "partyroom"
     private Category category;
 
 
