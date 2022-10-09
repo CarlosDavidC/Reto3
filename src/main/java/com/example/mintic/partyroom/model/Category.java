@@ -1,5 +1,6 @@
 package com.example.mintic.partyroom.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -14,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "category")
-public class Category {
+public class Category implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,48 +23,42 @@ public class Category {
     private String name;
     private String description;
 
-    @OneToMany( mappedBy= "category") //cascade = {CascadeType.PERSIST},
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy= "category") //cascade = {CascadeType.PERSIST},
     @JsonIgnoreProperties("category")
     public List<Partyroom> partyrooms; //cambio nuevo
-
 
     public Integer getId() {
         return id;
     }
 
-
     public void setId(Integer id) {
         this.id = id;
     }
-
 
     public String getName() {
         return name;
     }
 
-
     public void setName(String name) {
         this.name = name;
     }
-
 
     public String getDescription() {
         return description;
     }
 
-
     public void setDescription(String description) {
         this.description = description;
     }
-
 
     public List<Partyroom> getPartyrooms() {
         return partyrooms;
     }
 
-
-    public void setPartyrooms(List<Partyroom> partyroom) {
-        this.partyrooms = partyroom;
+    public void setPartyrooms(List<Partyroom> partyrooms) {
+        this.partyrooms = partyrooms;
     }
+
+
 
 }

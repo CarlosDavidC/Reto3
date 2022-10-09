@@ -28,7 +28,7 @@ public class Partyroom implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "categoryId")
-    @JsonIgnoreProperties("partyroom")  //cambio nuevo "partyroom"
+    @JsonIgnoreProperties("partyrooms")  //cambio nuevo "partyroom"
     private Category category;
 
 
