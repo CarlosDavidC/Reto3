@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,10 +37,20 @@ public class ControllerMessage {
         return serviceMessage.getMessage(id);
     }
 
-
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Message save(@RequestBody Message message) {
         return serviceMessage.save(message);
+    }
+
+    @PostMapping("/update")
+    public Message update(@RequestBody Message message) {
+        return serviceMessage.save(message);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int id){
+        return serviceMessage.deleteMessage(id);
     }
 }

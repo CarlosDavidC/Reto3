@@ -37,4 +37,11 @@ public class ServicePartyroom {
         }
     }
 
+    public boolean deletePartyroom(int id){
+        boolean d = getPartyroom(id).map(partyroom -> {
+            repositoryPartyroom.delete(partyroom);
+            return true;
+        }).orElse(false);
+        return d;
+    }
 }

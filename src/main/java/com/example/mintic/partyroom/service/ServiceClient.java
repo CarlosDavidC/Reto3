@@ -36,4 +36,12 @@ public class ServiceClient {
             }
         }
     }
+
+    public boolean deleteClient(int id){
+        boolean d = getClient(id).map(client -> {
+            repositoryClient.delete(client);
+            return true;
+        }).orElse(false);
+        return d;
+    }
 }

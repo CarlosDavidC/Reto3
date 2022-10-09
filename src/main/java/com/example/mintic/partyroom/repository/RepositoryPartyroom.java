@@ -27,5 +27,8 @@ public class RepositoryPartyroom {
         return crudRepositoryPartyroom.save(partyroom);
     }
 
+    public void delete(Partyroom partyroom){
+        crudRepositoryPartyroom.delete(partyroom);
+    }
 }
 

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,10 +36,21 @@ public class ControllerCategory {
         return serviceCategory.getCategory(id);
     }
 
-
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Category save(@RequestBody Category category) {
         return serviceCategory.save(category);
     }
+
+    @PostMapping("/update")
+    public Category update(@RequestBody Category category) {
+        return serviceCategory.save(category);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int id){
+        return serviceCategory.deleteCategory(id);
+    }
+    
 }

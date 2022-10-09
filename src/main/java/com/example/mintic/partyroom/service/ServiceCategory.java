@@ -36,4 +36,12 @@ public class ServiceCategory {
             }
         }
     }
+
+    public boolean deleteCategory(int id){
+        boolean d = getCategory(id).map(category -> {
+            repositoryCategory.delete(category);
+            return true;
+        }).orElse(false);
+        return d;
+    }
 }

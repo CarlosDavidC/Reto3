@@ -37,4 +37,11 @@ public class ServiceMessage {
         }
     }
     
+    public boolean deleteMessage(int id){
+        boolean d = getMessage(id).map(message -> {
+            repositoryMessage.delete(message);
+            return true;
+        }).orElse(false);
+        return d;
+    }
 }

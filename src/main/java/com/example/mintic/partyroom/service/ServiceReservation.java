@@ -36,4 +36,12 @@ public class ServiceReservation {
             }
         }
     }
+
+    public boolean deleteReservation(int id){
+        boolean d = getReservation(id).map(reservation -> {
+            repositoryReservation.delete(reservation);
+            return true;
+        }).orElse(false);
+        return d;
+    }
 }
