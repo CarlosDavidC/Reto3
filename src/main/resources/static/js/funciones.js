@@ -11,7 +11,7 @@ function guardarInformacionCategoria(){
     $.ajax (
         {
 
-            url          : 'http://localhost:8080/api/Category/save',
+            url          : 'http://129.153.153.28:81/api/Category/save',
             type         : 'POST',
             data         :  dataToSend,
             datatype     :  "JSON",
@@ -32,7 +32,7 @@ function guardarInformacionCategoria(){
 function traerInformacionCategoria(){
     $.ajax(
               {
-                url:"http://localhost:8080/api/Category/all",
+                url:"http://129.153.153.28:81/api/Category/all",
                 type:"GET",
                 datatype:"JSON",
                 success:function(respuesta){                
@@ -75,7 +75,7 @@ function pintarRespuestaCategoria(items){
 function traerInformacionSalonFiesta(){
     $.ajax(
               {
-                url:"http://localhost:8080/api/Partyroom/all",
+                url:"http://129.153.153.28:81/api/Partyroom/all",
                 type:"GET",
                 datatype:"JSON",
                 success:function(respuesta){
@@ -133,7 +133,7 @@ function guardarInformacionSalonFiesta(){
     $.ajax (
         {
 
-            url          : 'http://localhost:8080/api/Partyroom/save',
+            url          : 'http://129.153.153.28:81/api/Partyroom/save',
             type         : 'POST',
             data         :  dataToSend,
             datatype     :  "JSON",
@@ -162,7 +162,7 @@ function guardarInformacionCliente(){
     $.ajax (
         {
 
-            url          : 'http://localhost:8080/api/Client/save',
+            url          : 'http://129.153.153.28:81/api/Client/save',
             type         : 'POST',
             data         :  dataToSend,
             datatype     :  "JSON",
@@ -182,7 +182,7 @@ function guardarInformacionCliente(){
 function traerInformacionCliente(){
     $.ajax(
               {
-                url:"http://localhost:8080/api/Client/all",
+                url:"http://129.153.153.28:81/api/Client/all",
                 type:"GET",
                 datatype:"JSON",
                 success:function(respuesta){
@@ -233,7 +233,7 @@ function guardarInformacionMensaje(){
     $.ajax (
         {
 
-            url          : 'http://localhost:8080/api/Message/save',
+            url          : 'http://129.153.153.28:81/api/Message/save',
             type         : 'POST',
             data         :  dataToSend,
             datatype     :  "JSON",
@@ -253,7 +253,7 @@ function guardarInformacionMensaje(){
 function traerInformacionMensaje(){
     $.ajax(
               {
-                url:"http://localhost:8080/api/Message/all",
+                url:"http://129.153.153.28:81/api/Message/all",
                 type:"GET",
                 datatype:"JSON",
                 success:function(respuesta){
@@ -305,7 +305,7 @@ function guardarInformacionReservacion(){
     $.ajax (
         {
 
-            url          : 'http://localhost:8080/api/Reservation/save',
+            url          : 'http://129.153.153.28:81/api/Reservation/save',
             type         : 'POST',
             data         :  dataToSend,
             datatype     :  "JSON",
@@ -325,7 +325,7 @@ function guardarInformacionReservacion(){
 function traerInformacionReservacion(){
     $.ajax(
               {
-                url:"http://localhost:8080/api/Reservation/all",
+                url:"http://129.153.153.28:81/api/Reservation/all",
                 type:"GET",
                 datatype:"JSON",
                 success:function(respuesta){
