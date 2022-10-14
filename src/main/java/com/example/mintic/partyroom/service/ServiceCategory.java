@@ -37,6 +37,9 @@ public class ServiceCategory {
         }
     }
 
+
+
+    
     public Category update(Category category) {
         if (category.getId() !=null){
             Optional<Category> g= repositoryCategory.getCategory(category.getId());
@@ -52,6 +55,10 @@ public class ServiceCategory {
         }
         return category;
         }
+
+
+
+
 
     public boolean deleteCategory(int id){
         boolean d = getCategory(id).map(category -> {

@@ -1,7 +1,23 @@
 package com.example.mintic.partyroom.repository.crud;
+import java.sql.Date;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import com.example.mintic.partyroom.model.Reservation;
 
 public interface CrudRepositoryReservation  extends CrudRepository<Reservation,Integer>{
+    // Cantidad de reservas completatas vs canceladas
+    public List<Reservation> findAllByStatus(String status);
+
+    // Cantidad de reservas en un tiempo determinado.
+    public List<Reservation> findAllByStartDateAfterAndStartDateBefore(java.util.Date fechaUno, java.util.Date fechaDos);
+
+
+
+    // Top de los clientes que más dinero le han dejado a la compañía.
+    // INSTRUCCION SQL SELECT clientid, COUNT(*) AS total FROM reservacion group by clientid order by desc;
     
+    @Query("SELECT c.client, COUNT(c.client) from Reservation  AS c  group by c.client order by COUNT(c.client)DESC ")
+    public List<Object[]> reporteClientes();
 }

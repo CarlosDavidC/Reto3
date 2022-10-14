@@ -1,5 +1,6 @@
 package com.example.mintic.partyroom.repository;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,5 +30,22 @@ public class RepositoryReservation {
 
     public void delete(Reservation reservation){
         crudRepositoryReservation.delete(reservation);
+    }
+
+
+
+
+    public List<Reservation> ReservacionStatus(String status){
+        return crudRepositoryReservation.findAllByStatus(status);
+    }
+
+    public List<Reservation> ReservacionTiempo(java.util.Date fechaUno, java.util.Date fechaDos){
+        return crudRepositoryReservation.findAllByStartDateAfterAndStartDateBefore(fechaUno, fechaDos);
+    }
+
+       
+    public   List<Object[]> reporteClientes() {
+        return crudRepositoryReservation.reporteClientes();
+
     }
 }

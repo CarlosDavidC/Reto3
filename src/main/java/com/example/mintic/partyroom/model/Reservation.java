@@ -37,8 +37,6 @@ public class Reservation {
     //@JsonIgnoreProperties({"reservations"})
     private Client client;
 
-    
-    
     @OneToOne(cascade = {CascadeType.REMOVE},mappedBy="reservation")
     @JsonIgnoreProperties("reservation")
     private Score score;

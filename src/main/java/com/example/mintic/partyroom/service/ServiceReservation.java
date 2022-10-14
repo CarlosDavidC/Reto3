@@ -1,12 +1,19 @@
 package com.example.mintic.partyroom.service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.mintic.partyroom.model.Client;
 import com.example.mintic.partyroom.model.Reservation;
+import com.example.mintic.partyroom.reportes.ContadorClientes;
+import com.example.mintic.partyroom.reportes.StatusReservas;
 import com.example.mintic.partyroom.repository.RepositoryReservation;
 
 @Service
@@ -59,7 +66,6 @@ public class ServiceReservation {
                 return reservation;
             }
         }
-            
 
     public boolean deleteReservation(int id){
         boolean d = getReservation(id).map(reservation -> {
@@ -68,4 +74,52 @@ public class ServiceReservation {
         }).orElse(false);
         return d;
     }
+
+    
+
+    public StatusReservas ReservacionStatus(){
+       
+        List<Reservation> completed = repositoryReservation.ReservacionStatus("completed");
+        List<Reservation> cancelled = repositoryReservation.ReservacionStatus("cancelled");
+
+        return new StatusReservas(completed.size(), cancelled.size());
+    }
+
+    
+    public List<Reservation> ReservacionTiempo(String fechaInicial,String fechaFinal){
+        SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-dd");
+
+        Date fechaUno = new Date();
+        Date fechaDos = new Date();
+
+        try {
+            fechaUno = parser.parse(fechaInicial);
+            fechaDos = parser.parse(fechaFinal);
+        } catch (ParseException evt) {
+            evt.printStackTrace();
+        }
+        if (fechaUno.before(fechaDos)) {
+            return repositoryReservation.ReservacionTiempo(fechaUno, fechaDos);
+        } else {
+            return new ArrayList<>();
+        }
+    }
+
+  
+
+    public List<ContadorClientes> reporteClientes() {        
+        List<ContadorClientes> resultado = new ArrayList<>();
+        List<Object[]> reporte = repositoryReservation.reporteClientes();
+        System.out.println(reporte);
+        for (int i = 0; i < reporte.size(); i++) {
+            resultado.add(new ContadorClientes((Long) reporte.get(i)[1], (Client) reporte.get(i)[0]));
+        }
+        return resultado;
+    }
+
+    public List<Reservation> dates(java.sql.Date startDate, java.sql.Date endDate) {
+        return null;
+    }
+
+
 }

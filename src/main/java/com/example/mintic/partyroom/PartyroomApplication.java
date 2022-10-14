@@ -11,5 +11,4 @@ public class PartyroomApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PartyroomApplication.class, args);
 	}
-
 }
