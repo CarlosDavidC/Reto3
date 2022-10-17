@@ -11,7 +11,7 @@ function guardarInformacionCategoria(){
     $.ajax (
         {
 
-            url          : 'http://129.153.153.28:81/api/Category/save',
+            url          : 'http://localhost:8080/api/Category/save',
             type         : 'POST',
             data         :  dataToSend,
             datatype     :  "JSON",
@@ -32,20 +32,17 @@ function guardarInformacionCategoria(){
 function traerInformacionCategoria(){
     $.ajax(
               {
-                url:"http://129.153.153.28:81/api/Category/all",
+                url:"http://localhost:8080/api/Category/all",
                 type:"GET",
                 datatype:"JSON",
-                success:function(respuesta){                
+                success:function(respuesta){
                     pintarRespuestaCategoria(respuesta);
-                    
                 },
                 error       :   function(xhr,status){
                     alert('Operacion no satisfactoria,'+ xhr.status );
                 }
-            
-                    
               }
-               
+
           );
 }
 
@@ -56,7 +53,7 @@ function pintarRespuestaCategoria(items){
 
     //declarar variables js
     let myTable="<table>";
-    myTable += "<tr><th>Codigo</th><th>Nombre</th></tr>";
+    myTable += "<tr><th>Código</th><th>Nombre</th><th>Descripción</th</tr>";
     for(i=0;i<items.length;i++){
         myTable+="<tr>";
         myTable+="<td>"+ items[i].id+ "</td>";
@@ -75,7 +72,7 @@ function pintarRespuestaCategoria(items){
 function traerInformacionSalonFiesta(){
     $.ajax(
               {
-                url:"http://129.153.153.28:81/api/Partyroom/all",
+                url:"http://localhost:8080/api/Partyroom/all",
                 type:"GET",
                 datatype:"JSON",
                 success:function(respuesta){
@@ -101,7 +98,7 @@ function pintarRespuestaSalonFiesta(items){
 
     //declarar variables js
     let myTable="<table>";
-    myTable += "<tr><th>Codigo</th><th>Nombre</th> <th> Marca</th><th>Año</th><th>descripcion</th><th>Codigo Categoria</th><th>Nombre Categoria</th><th>Descripcion Categoria</th> <th>Mensaje</th><th>Reservacion</th></tr>";
+    myTable += "<tr><th>Código</th><th>Nombre</th> <th> Marca</th><th>Año</th><th>Descripción</th><th>Código Categoría</th><th>Nombre Categoría</th><th>Descripción Categoría</th> <th>Mensaje</th><th>Reservación</th></tr>";
     for(i=0;i<items.length;i++){
         myTable+="<tr>";
         myTable+="<td>"+items[i].id+"</td>";
@@ -133,7 +130,7 @@ function guardarInformacionSalonFiesta(){
     $.ajax (
         {
 
-            url          : 'http://129.153.153.28:81/api/Partyroom/save',
+            url          : 'http://localhost:8080/api/Partyroom/save',
             type         : 'POST',
             data         :  dataToSend,
             datatype     :  "JSON",
@@ -162,7 +159,7 @@ function guardarInformacionCliente(){
     $.ajax (
         {
 
-            url          : 'http://129.153.153.28:81/api/Client/save',
+            url          : 'http://localhost:8080/api/Client/save',
             type         : 'POST',
             data         :  dataToSend,
             datatype     :  "JSON",
@@ -182,7 +179,7 @@ function guardarInformacionCliente(){
 function traerInformacionCliente(){
     $.ajax(
               {
-                url:"http://129.153.153.28:81/api/Client/all",
+                url:"http://localhost:8080/api/Client/all",
                 type:"GET",
                 datatype:"JSON",
                 success:function(respuesta){
@@ -205,7 +202,7 @@ function pintarRespuestaCliente(items){
 
    //declarar variables js
    let myTable="<table>";
-   myTable += "<tr><th>Codigo</th><th> Correo</th><th>password</th><th>Nombre</th><th>Edad</th><th>Mensaje</th><th>Reservaciones</th></tr>";
+   myTable += "<tr><th>Código</th><th>Correo</th><th>Contraseña</th><th>Nombre</th><th>Edad</th><th>Mensaje</th><th>Reservaciones</th></tr>";
    for(i=0;i<items.length;i++){
        myTable+="<tr>";
        myTable+="<td>"+items[i].idClient+"</td>";
@@ -233,7 +230,7 @@ function guardarInformacionMensaje(){
     $.ajax (
         {
 
-            url          : 'http://129.153.153.28:81/api/Message/save',
+            url          : 'http://localhost:8080/api/Message/save',
             type         : 'POST',
             data         :  dataToSend,
             datatype     :  "JSON",
@@ -253,7 +250,7 @@ function guardarInformacionMensaje(){
 function traerInformacionMensaje(){
     $.ajax(
               {
-                url:"http://129.153.153.28:81/api/Message/all",
+                url:"http://localhost:8080/api/Message/all",
                 type:"GET",
                 datatype:"JSON",
                 success:function(respuesta){
@@ -276,7 +273,7 @@ function pintarRespuestaMensaje(items){
 
    //declarar variables js
    let myTable="<table>";
-   myTable += "<tr><th>Codigo</th><th> Mensaje</th><th>codigo SalonFiesta</th><th>Nombre Salon Fiesta</th><th>Codigo Cliente</th><th>Nombre Cliente</th></tr>";
+   myTable += "<tr><th>Código</th><th> Mensaje</th><th>Código Salón Fiesta</th><th>Nombre Salón Fiesta</th><th>Código Cliente</th><th>Nombre Cliente</th></tr>";
    for(i=0;i<items.length;i++){
        myTable+="<tr>";
        myTable+="<td>"+items[i].idMessage+"</td>";
@@ -305,7 +302,7 @@ function guardarInformacionReservacion(){
     $.ajax (
         {
 
-            url          : 'http://129.153.153.28:81/api/Reservation/save',
+            url          : 'http://localhost:8080/api/Reservation/save',
             type         : 'POST',
             data         :  dataToSend,
             datatype     :  "JSON",
@@ -325,7 +322,7 @@ function guardarInformacionReservacion(){
 function traerInformacionReservacion(){
     $.ajax(
               {
-                url:"http://129.153.153.28:81/api/Reservation/all",
+                url:"http://localhost:8080/api/Reservation/all",
                 type:"GET",
                 datatype:"JSON",
                 success:function(respuesta){
@@ -334,8 +331,6 @@ function traerInformacionReservacion(){
                 error       :   function(xhr,status){
                     alert('Operacion no satisfactoria,'+ xhr.status );
                 }
-            
-                    
               }
                
           );
@@ -348,7 +343,7 @@ function pintarRespuestaReservacion(items){
 
    //declarar variables js
    let myTable="<table>";
-   myTable += "<tr><th>Codigo Res</th><th> Fecha Inicio</th><th>Fecha fin</th><th>Status</th><th>Codigo salon fiesta</th><th>Nombre salon fiesta</th><th>Codigo Cliente</th><th>Nombre Cliente</th></tr>";
+   myTable += "<tr><th>Código Res</th><th> Fecha Inicio</th><th>Fecha fin</th><th>Status</th><th>Código salón fiesta</th><th>Nombre salón fiesta</th><th>Codigo Cliente</th><th>Nombre Cliente</th></tr>";
    for(i=0;i<items.length;i++){
        myTable+="<tr>";
        myTable+="<td>"+items[i].idReservation+"</td>";

@@ -9,12 +9,28 @@
     <link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/flexbox.css">
+
+
+    <style>
+        table{
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        th, td{
+            padding: 10px 20px;
+            border: 1px solid #000;
+        }
+    </style>
+
+
+
+
 </head>
 <body>
     <header class="headerPrincipal">
 		<div class="container">
 			<h1 class="headerPrincipal-titulo">
-				<a href="#">Alquiler de salones para fiesta</a>
+				<a href="#" class="titulo1">Alquiler de salones para fiesta</a>
 			</h1>
 		</div>
 
@@ -88,6 +104,7 @@
         <button class="bubbly-button" onclick="traerInformacionMensaje()"> Consultar</button>
         <button class="bubbly-button" onclick="guardarInformacionMensaje()"> Insertar</button>
     </div>
+        <h1 class="resultado">Resultados de consulta</h1>
     <div id="resultado">
     </div>
 </body>
