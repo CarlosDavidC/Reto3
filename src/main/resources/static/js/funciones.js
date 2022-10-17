@@ -360,10 +360,25 @@ function pintarRespuestaReservacion(items){
        myTable+="<td>"+items[i].client.idClient+"</td>";
        myTable+="<td>"+items[i].client.name+"</td>";
        
-       // myTable+="<td><button onclick='borrarElemento("+items[i].id+")'>Borrar</button>";
+       myTable+="<td><button onclick='borrarElemento("+items[i].id+")'>Borrar</button>";
        myTable+="</tr>";
    }
    myTable +="</table>";
    $("#resultado").append(myTable);
 }
 
+//Botones
+var animateButton = function(e) {
+  e.preventDefault;
+  //reset animation
+  e.target.classList.remove('animate');
+  
+  e.target.classList.add('animate');
+  setTimeout(function(){
+    e.target.classList.remove('animate');
+  },700);
+};
+var bubblyButtons = document.getElementsByClassName("bubbly-button");
+for (var i = 0; i < bubblyButtons.length; i++) {
+  bubblyButtons[i].addEventListener('click', animateButton, false);
+}

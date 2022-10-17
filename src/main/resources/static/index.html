@@ -5,74 +5,90 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>    
-    <title>Ajax</title>
+    <title>Salones para fiesta</title>
+    <link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/flexbox.css">
 </head>
 <body>
-    <h1>Alquiler de Salones de fiesta</h1>
+    <header class="headerPrincipal">
+		<div class="container">
+			<h1 class="headerPrincipal-titulo">
+				<a href="#">Alquiler de salones para fiesta</a>
+			</h1>
+		</div>
 
-    <div>
-        <h1>Categorias</h1>
+	</header>
+    <div class="esp"><h1>_  </h1></div>
+
+    <div class="aa">
+        <h1 class="bb">Categorías</h1>
         <!-- <input type="text" id="idCategoria" placeholder="codigo categoria"> -->
-        <input type="text" id="nombreCategoria" placeholder="nombre categoria">
-        <input type="text" id="descripcionCategoria" placeholder="descripcion categoria">
-        <button onclick="traerInformacionCategoria()"> Consultar</button>
-        <button onclick="guardarInformacionCategoria()"> Insertar</button>
-       
-    </div>    
-
-    <div>
-        <h1>Salones de fiesta</h1>
-        <!-- <input type="text" id="idCategoria" placeholder="codigo categoria"> -->
-        <input type="text" id="nombreSalonFiesta" placeholder="nombre salon fiesta ">
-        <input type="text" id="descripcionSalonFiesta" placeholder="descripcion salon fiesta ">
-        <input type="text" id="marcaSalonFiesta" placeholder="marca salon fiesta">
-        <input type="number" id="anioCategoria" placeholder="Año salon fiesta">
-        <input type="number" id="idCategoria" placeholder="codigo categoria">
-
-        <button onclick="traerInformacionSalonFiesta()"> Consultar</button>
-        <button onclick="guardarInformacionSalonFiesta()"> Insertar</button>
-       
-    </div>    
-
-    <div>
-        <h1>Cliente</h1>
-        <!-- <input type="text" id="idCategoria" placeholder="codigo categoria"> -->
-        <input type="text" id="nombreCliente" placeholder="nombre cliente ">
-        <input type="text" id="emailCliente" placeholder="correo cliente ">
-        <input type="text" id="claveCliente" placeholder="password salon fiesta">
-        <input type="number" id="edadCliente" placeholder= "edad cliente">
+        <input class="ab" type="text" id="nombreCategoria" placeholder="Nombre categoría">
+        <input class="ab" type="text" id="descripcionCategoria" placeholder="Descripción categoría">
         
-        <button onclick="traerInformacionCliente()"> Consultar</button>
-        <button onclick="guardarInformacionCliente()"> Insertar</button>
     </div>    
-
-    <div>
-        <h1>Mensajes</h1>
-        <!-- <input type="text" id="idPapeleria" placeholder="codigo articulo"> -->
-        <input type="text" id="mensaje" placeholder="texto mensaje">
-        <input type="number" id="idClienteM" placeholder="codigo cliente">
-        <input type="number" id="idSalonFiestaM" placeholder="codigo salon fiesta">
-        <button onclick="traerInformacionMensaje()"> Consultar</button>
-        <button onclick="guardarInformacionMensaje()"> Insertar</button>
-        
+    <div class="bt">
+        <button class="bubbly-button" onclick="traerInformacionCategoria()"> Consultar</button>
+        <button class="bubbly-button" onclick="guardarInformacionCategoria()"> Insertar</button>
     </div>
 
-    
-    <div>
-        <h1>Reservacion</h1>
-        <!-- <input type="text" id="idPapeleria" placeholder="codigo articulo"> -->
-        <input type="date" id="fechaInicio" placeholder="fecha Inicio">
-        <input type="date" id="fechaFinal" placeholder="fecha final">
-        <input type="number" id="idClienteR" placeholder="codigo cliente">
-        <input type="number" id="idSalonFiestaR" placeholder="codigo salon fiesta">
-        
-        <button onclick="traerInformacionReservacion()"> Consultar</button>
-        <button onclick="guardarInformacionReservacion()"> Insertar</button>
-        
+    <div class="aa">
+        <h1 class="bb">Salones de fiesta</h1>
+        <!-- <input type="text" id="idCategoria" placeholder="codigo categoria"> -->
+        <input class="ab" type="text" id="nombreSalonFiesta" placeholder="Nombre salón fiesta ">
+        <input class="ab" type="text" id="descripcionSalonFiesta" placeholder="Descripción salón fiesta ">
+        <input class="ab" type="text" id="marcaSalonFiesta" placeholder="Marca salón fiesta">
+        <input class="ab" type="number" id="anioCategoria" placeholder="Año salón fiesta">
+        <input class="ab" type="number" id="idCategoria" placeholder="Código categoría">
     </div>
-    
+
+    <div class="bt">
+        <button class="bubbly-button" onclick="traerInformacionSalonFiesta()"> Consultar</button>
+        <button class="bubbly-button" onclick="guardarInformacionSalonFiesta()"> Insertar</button>
+    </div>
+
+    <div class="aa">
+        <h1 class="bb">Cliente</h1>
+        <!-- <input type="text" id="idCategoria" placeholder="codigo categoria"> -->
+        <input class="ab" type="text" id="nombreCliente" placeholder="Nombre cliente ">
+        <input class="ab" type="text" id="emailCliente" placeholder="Correo cliente ">
+        <input class="ab" type="text" id="claveCliente" placeholder="Contraseña salón fiesta">
+        <input class="ab" type="number" id="edadCliente" placeholder= "Edad Cliente">
+    </div>
+
+    <div class="bt">
+        <button class="bubbly-button" onclick="traerInformacionCliente()"> Consultar</button>
+        <button class="bubbly-button" onclick="guardarInformacionCliente()"> Insertar</button>
+    </div>
+
+    <div class="aa">
+        <h1 class="bb">Mensajes</h1>
+        <!-- <input type="text" id="idPapeleria" placeholder="codigo articulo"> -->
+        <input class="ab" type="text" id="mensaje" placeholder="Texto mensaje">
+        <input class="ab" type="number" id="idClienteM" placeholder="Código cliente">
+        <input class="ab" type="number" id="idSalonFiestaM" placeholder="Código salón fiesta">
+    </div>
+
+    <div class="bt">
+        <button class="bubbly-button" onclick="traerInformacionMensaje()"> Consultar</button>
+        <button class="bubbly-button" onclick="guardarInformacionMensaje()"> Insertar</button>
+    </div>
+
+    <div class="aa">
+        <h1 class="bb">Reservación</h1>
+        <!-- <input type="text" id="idPapeleria" placeholder="codigo articulo"> -->
+        <input class="ab" type="date" id="fechaInicio" placeholder="Fecha inicio">
+        <input class="ab" type="date" id="fechaFinal" placeholder="Fecha final">
+        <input class="ab" type="number" id="idClienteR" placeholder="Código cliente">
+        <input class="ab" type="number" id="idSalonFiestaR" placeholder="Código salón fiesta">
+    </div>
+
+    <div class="bt">
+        <button class="bubbly-button" onclick="traerInformacionMensaje()"> Consultar</button>
+        <button class="bubbly-button" onclick="guardarInformacionMensaje()"> Insertar</button>
+    </div>
     <div id="resultado">
-
     </div>
 </body>
 <script type="text/javascript" src="js/funciones.js"></script>
